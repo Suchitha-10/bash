@@ -1,0 +1,443 @@
+
+
+GIT PROGRAMS
+1. Pull the code from bitbucket to local repo then push the code from the local repo to github
+
+C:\Users\Raw>cd ..
+
+C:\Users>cd  ..
+
+C:\>cd miniproject
+
+C:\miniproject>git init
+Initialized empty Git repository in C:/miniproject/.git/
+
+C:\miniproject>git clone https://Suchitha-10@bitbucket.org/Suchitha-10/nam.git
+Cloning into 'nam'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), 1.93 KiB | 98.00 KiB/s, done.
+
+C:\miniproject>git commit -m "1st commit"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        nam/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\miniproject>cd nam
+
+C:\miniproject\nam>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 08E4-5596
+
+ Directory of C:\miniproject\nam
+
+21-10-2021  07:37    <DIR>          .
+21-10-2021  07:37    <DIR>          ..
+21-10-2021  07:37               674 .gitignore
+21-10-2021  07:37             2,666 README.md
+21-10-2021  07:37                21 test.txt
+               3 File(s)          3,361 bytes
+               2 Dir(s)  39,366,828,032 bytes free
+
+C:\miniproject\nam>git commit -m "1st commit"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\miniproject\nam>git add test.txt
+
+C:\miniproject\nam>git commit -m "2nd commit"
+[master c70d6ea] 2nd commit
+ 1 file changed, 1 insertion(+)
+
+C:\miniproject\nam>git log
+commit c70d6ead0ebc19553facf2ce95b0747f1e8d78bd (HEAD -> master)
+Author: Suchitha <suchitha.s.marru@apisero.com>
+Date:   Thu Oct 21 07:40:35 2021 +0530
+
+    2nd commit
+
+commit 9a5a04422ef47a0c5907eb7a7fe67d3aac871ae9 (origin/master, origin/HEAD)
+Author: Suchitha <suchitha.s.marru@apisero.com>
+Date:   Fri Oct 8 07:11:45 2021 +0530
+
+    1st commit
+
+commit 95eacbae0712116015b348f2ef9864d568d35149
+Author: Suchitha Marru <suchitha.s.marru@apisero.com>
+Date:   Fri Oct 8 01:29:09 2021 +0000
+
+    Initial commit
+
+C:\miniproject\nam>git remote add mini https://github.com/Suchitha-10/mini.git
+
+C:\miniproject\nam>git commit -m "3rd commit"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\miniproject\nam>git remote -v
+mini    https://github.com/Suchitha-10/mini.git (fetch)
+mini    https://github.com/Suchitha-10/mini.git (push)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/nam.git (fetch)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/nam.git (push)
+
+C:\miniproject\nam>git push mini
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 2.16 KiB | 1.08 MiB/s, done.
+Total 10 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Suchitha-10/mini/pull/new/master
+remote:
+To https://github.com/Suchitha-10/mini.git
+ * [new branch]      master -> master
+
+C:\miniproject\nam>
+
+
+
+
+
+
+
+
+2. Pull the code from github and push it directly to bitbucket
+
+
+
+C:\Users\Raw>cd ..
+
+C:\Users>cd ..
+
+C:\>cd miniproject
+
+C:\miniproject>git add .
+
+C:\miniproject>git add types.txt
+
+C:\miniproject>git commit -m "save 1"
+[master (root-commit) fa70598] save 1
+ 1 file changed, 2 insertions(+)
+ create mode 100644 types.txt
+
+C:\miniproject>git remote add project https://github.com/Suchitha-10/project.git
+
+C:\miniproject>git remote -v
+project https://github.com/Suchitha-10/project.git (fetch)
+project https://github.com/Suchitha-10/project.git (push)
+
+C:\miniproject>git push project
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 242 bytes | 242.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Suchitha-10/project/pull/new/master
+remote:
+To https://github.com/Suchitha-10/project.git
+ * [new branch]      master -> master
+
+C:\miniproject>git pull project
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 593 bytes | 84.00 KiB/s, done.
+From https://github.com/Suchitha-10/project
+ * [new branch]      main       -> project/main
+You asked to pull from the remote 'project', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+C:\miniproject>git commit -m "save 2"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   types.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\miniproject>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 08E4-5596
+
+ Directory of C:\miniproject
+
+21-10-2021  08:13    <DIR>          .
+21-10-2021  08:13    <DIR>          ..
+21-10-2021  08:23                53 types.txt
+               1 File(s)             53 bytes
+               2 Dir(s)  39,390,961,664 bytes free
+
+C:\miniproject>git add types.txt
+
+C:\miniproject>git commit -m "save 2"
+[master 3f054c2] save 2
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\miniproject>git remote -v
+project https://github.com/Suchitha-10/project.git (fetch)
+project https://github.com/Suchitha-10/project.git (push)
+
+C:\miniproject>git remote add origin https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git
+
+C:\miniproject>git remote -v
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (fetch)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (push)
+project https://github.com/Suchitha-10/project.git (fetch)
+project https://github.com/Suchitha-10/project.git (push)
+
+C:\miniproject>git push origin
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+C:\miniproject>git push origin master
+To https://bitbucket.org/Suchitha-10/origin.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://bitbucket.org/Suchitha-10/origin.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\miniproject>git remote add example https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git
+
+C:\miniproject>git push example
+To https://bitbucket.org/Suchitha-10/origin.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://bitbucket.org/Suchitha-10/origin.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\miniproject>git remote -v
+example https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (fetch)
+example https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (push)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (fetch)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (push)
+project https://github.com/Suchitha-10/project.git (fetch)
+project https://github.com/Suchitha-10/project.git (push)
+
+C:\miniproject>git push example
+To https://bitbucket.org/Suchitha-10/origin.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://bitbucket.org/Suchitha-10/origin.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\miniproject>git push project
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 280 bytes | 280.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Suchitha-10/project.git
+   fa70598..3f054c2  master -> master
+
+C:\miniproject>git remote -v
+example https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (fetch)
+example https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (push)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (fetch)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (push)
+project https://github.com/Suchitha-10/project.git (fetch)
+project https://github.com/Suchitha-10/project.git (push)
+
+C:\miniproject>git push origin
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+C:\miniproject>git push --set-upstream origin master
+To https://bitbucket.org/Suchitha-10/origin.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://bitbucket.org/Suchitha-10/origin.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\miniproject>git push example
+To https://bitbucket.org/Suchitha-10/origin.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://bitbucket.org/Suchitha-10/origin.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\miniproject>To https://bitbucket.org/Suchitha-10/origin.git
+'To' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\miniproject> ! [rejected]        master -> master (fetch first)
+'!' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\miniproject>error: failed to push some refs to 'https://bitbucket.org/Suchitha-10/origin.git'
+'error:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\miniproject>hint: Updates were rejected because the remote contains work that you do
+'hint:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\miniproject>hint: not have locally. This is usually caused by another repository pushing
+'hint:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\miniproject>hint: to the same ref. You may want to first integrate the remote changes
+'hint:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\miniproject>hint: (e.g., 'git pull ...') before pushing again.
+'hint:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\miniproject>hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+'hint:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\miniproject>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 08E4-5596
+
+ Directory of C:\miniproject
+
+21-10-2021  08:49    <DIR>          .
+21-10-2021  08:49    <DIR>          ..
+21-10-2021  08:49                 0 master
+21-10-2021  08:23                53 types.txt
+               2 File(s)             53 bytes
+               2 Dir(s)  39,389,081,600 bytes free
+
+C:\miniproject>git remove -v
+git: 'remove' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+
+C:\miniproject>git remote -v
+example https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (fetch)
+example https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (push)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (fetch)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (push)
+project https://github.com/Suchitha-10/project.git (fetch)
+project https://github.com/Suchitha-10/project.git (push)
+
+C:\miniproject>git push example
+To https://bitbucket.org/Suchitha-10/origin.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://bitbucket.org/Suchitha-10/origin.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\miniproject>git push --help
+
+C:\miniproject>git remote add example https://Suchitha-10@bitbucket.org/Suchitha-10/example.git
+error: remote example already exists.
+
+C:\miniproject>git remote -v
+example https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (fetch)
+example https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (push)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (fetch)
+origin  https://Suchitha-10@bitbucket.org/Suchitha-10/origin.git (push)
+project https://github.com/Suchitha-10/project.git (fetch)
+project https://github.com/Suchitha-10/project.git (push)
+
+C:\miniproject>git remote add apple git clone https://Suchitha-10@bitbucket.org/Suchitha-10/example.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+C:\miniproject>git remote add apple https://Suchitha-10@bitbucket.org/Suchitha-10/example.git
+
+C:\miniproject>git push apple
+To https://bitbucket.org/Suchitha-10/example.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://bitbucket.org/Suchitha-10/example.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\miniproject>git push apple https://Suchitha-10@bitbucket.org/Suchitha-10/example.git
+fatal: invalid refspec 'https://Suchitha-10@bitbucket.org/Suchitha-10/example.git'
+
+C:\miniproject>
+
+
+
+
+
+
+
+
+3. Use window batch commands to copy a file from a normal directory and paste it inside a git repo and push it to both github and bitbucket
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
